@@ -58,6 +58,9 @@ We believe that future web3 security efforts will prioritize identifying functio
 | [AChecker: Statically Detecting Smart Contract Access Control Vulnerabilities](https://people.ece.ubc.ca/mjulia/publications/ACheckerICSE2023.pdf) | Access Control |
 | [Towards Automated Verification of Smart Contract Fairness](https://personal.ntu.edu.sg/yi_li/files/Liu2020TAV.pdf) | Fairness Property |
 | [Clockwork Finance: Automated Analysis of Economic Security in Smart Contracts](https://www.computer.org/csdl/proceedings-article/sp/2023/933600a622/1He7Yru4ls4) | TBD |
+| [Confusum Contractum: Confused Deputy Vulnerabilities in Ethereum Smart Contracts](https://seclab.cs.ucsb.edu/files/publications/gritti23confusum.pdf) | Confused Deputy |
+| [Not your Type! Detecting Storage Collision Vulnerabilities in Ethereum Smart Contracts](https://seclab.cs.ucsb.edu/files/publications/ruaro24crush.pdf)    | Storage Collision |
+
 
 ### Publicly Available Security Analysis Techniques
 
@@ -66,6 +69,7 @@ This section will include open-source techniques that are publicly available and
 | Technique                                                                        | Developer(s)                                               | Description                                  | Security-related Keywords                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | :------------------------------------------------------------------------------- | :--------------------------------------------------------- | :------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Slither](https://github.com/crytic/slither)                                     | [Trail of Bits](https://www.trailofbits.com/)              | Static Analysis Framework                    | [Vulnerability Detectors](https://github.com/crytic/slither/blob/master/trophies.md), [SlithIR](https://github.com/crytic/slither/wiki/SlithIR)                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| [Aderyn](https://github.com/Cyfrin/aderyn)                                       | [Cyfrin](https://www.cyfrin.io/)                           | Static Analysis Framework                    | Static Analyzer, Custom Detectors, Markdown Reports                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [Foundry](https://github.com/foundry-rs/foundry)                                 | [Paradigm](https://www.paradigm.xyz/)                      | Development Toolchain                        | [Fuzzing](https://book.getfoundry.sh/forge/fuzz-testing), [Stateful Fuzzing (Invariant Testing)](https://book.getfoundry.sh/forge/invariant-testing#invariant-testing), [Differential Testing](https://book.getfoundry.sh/forge/differential-ffi-testing#differential-testing)                                                                                                                                                                                                                                                                                           |
 | [Echidna](https://github.com/crytic/echidna)                                     | [Trail of Bits](https://www.trailofbits.com/)              | Fuzzer                                       | [Fuzzing](https://github.com/crytic/echidna#echidna-a-fast-smart-contract-fuzzer-)                                                                                                                                                                                                                                                                                                 , [Stateful Fuzzing (Invariant Testing)](https://github.com/crytic/echidna#writing-invariants), [CI/CD](https://github.com/crytic/echidna#using-echidna-in-a-github-actions-workflow) |
 | [Optik](https://github.com/crytic/optik)                                         | [Trail of Bits](https://www.trailofbits.com/)              | Hybrid Fuzzer (Symbolic Execution + Fuzzing) | Fuzzing, Stateful Fuzzing, Symbolic Execution                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -76,6 +80,8 @@ This section will include open-source techniques that are publicly available and
 | [Solidity SMTChecker](https://docs.soliditylang.org/en/latest/smtchecker.html)   | [Ethereum Foundation](https://ethereum.org/en/foundation/) | Formal Verification by Symbolic Execution     | Solidity, Formal Verification, Symbolic Execution                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [Mythril](https://github.com/ConsenSys/mythril)                                  | [Consensys](https://consensys.net/)                        | Symbolic Execution Tool                       | Symbolic Execution, [On-Chain Analysis](https://mythril-classic.readthedocs.io/en/develop/security-analysis.html#analyzing-on-chain-contracts), [Vulnerability Detectors](https://mythril-classic.readthedocs.io/en/develop/analysis-modules.html), Taint Analysis |
 | [Pyrometer](https://github.com/nascentxyz/pyrometer) __[WIP]__                       | [Nascent](https://www.nascent.xyz/)                        | Symbolic Execution Tool  | Symbolic Execution, Abstract Interpretation |
+| [greed](https://github.com/ucsb-seclab/greed)                                        | [UCSB Seclab](https://seclab.cs.ucsb.edu/)                 | Static/Symbolic Analysis Framework |  Symbolic Execution, Bound Checker, Static Analyses, Property Testing
+| [ethpwn](https://github.com/ethpwn/ethpwn)                                           | [ethpwn](https://github.com/ethpwn/)                       | Dynamic analysis/Debugging                | EVM simulations, EVM debugging
 
 <details>
 <summary>In addition, we curate a catalogue of security utilities applicable to smart contract programming languages beyond Solidity.</summary></br>
@@ -118,7 +124,21 @@ Further details can be found in our [contribution guidelines](docs/contribution.
 
 ## Cite
 
-+ Zhuo Zhang, Brian Zhang, Wen Xu, Zhiqiang Lin, "Demystifying Exploitable Bugs in Smart Contracts." In Proceedings of the 45th International Conference on Software Engineering, 2023.
+If you are using our dataset for an academic publication, we would really appreciate a citation to the following work:
+
+```
+@inproceedings{DBLP:conf/icse/ZhangZXL23,
+  author       = {Zhuo Zhang and
+                  Brian Zhang and
+                  Wen Xu and
+                  Zhiqiang Lin},
+  title        = {Demystifying Exploitable Bugs in Smart Contracts},
+  booktitle    = {{ICSE}},
+  pages        = {615--627},
+  publisher    = {{IEEE}},
+  year         = {2023}
+}
+```
 
 ## Clarification
 
@@ -138,5 +158,7 @@ We would like to extend our sincere thanks to [code4rena](https://code4rena.com/
 + [__y3s0n__](https://github.com/CharesFang)
 + [__William Aaron Cheung__](https://github.com/Troublor)
 + [__soaphorn__](https://github.com/soaphorn)
++ [__Fabio Gritti__](https://github.com/degrigis)
++ [__Yannick__](https://twitter.com/MillusPontius)
 
 </details>
